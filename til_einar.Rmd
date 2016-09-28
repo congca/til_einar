@@ -14,8 +14,6 @@ stats <- as.data.frame(fromJSONstat(url))
 # colnames are found after last . in original colnames
 colnames(stats) <- gsub("^(.*[.])", "", colnames(stats))
 
-num_loc = length(unique(stats$gjerningssted))
-
 for(county in unique(stats$gjerningssted)) {
   # get our favourite county
   county_stats <- stats[stats$gjerningssted == county, ]
